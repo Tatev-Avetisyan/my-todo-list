@@ -1,0 +1,9 @@
+@import "../../../styles/variables/borders";
+
+.mainHeadWrapper {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border-top-left-radius: $base-border-radius;
+  border-top-right-radius: $base-border-radius;
+}

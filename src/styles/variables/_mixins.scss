@@ -1,3 +1,5 @@
+@import "./borders";
+
 @mixin main-wrapper-frame(
   $width: 60%,
   $flex-direction: column,
@@ -9,7 +11,7 @@
   height: auto;
   box-shadow: $box-shadow;
   padding: 24px, 0px, 24px, 0px;
-  border-radius: 8px;
+  border-radius: $base-border-radius;
   display: flex;
   flex-direction: $flex-direction;
   margin: $margin;
