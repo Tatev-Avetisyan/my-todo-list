@@ -1,0 +1,6 @@
+@import "../../styles/variables/mixins";
+
+.mainWrapper {
+  @include main-wrapper-frame;
+  background-color: #fefefe;
+}
