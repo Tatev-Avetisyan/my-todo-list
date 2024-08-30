@@ -1,4 +1,5 @@
 @import "./borders";
+@import "./colors";
 
 @mixin main-wrapper-frame(
   $width: 60%,
@@ -15,4 +16,18 @@
   display: flex;
   flex-direction: $flex-direction;
   margin: $margin;
+}
+
+@mixin button($width, $bgColor, $border-radius) {
+  width: $width;
+  height: 5vh;
+  color: $white-text-color;
+  background: $bgColor;
+  border-radius: $border-radius;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
 }
