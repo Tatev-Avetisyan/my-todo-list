@@ -1,0 +1,10 @@
+@import "../../styles/variables/colors";
+
+.todoListWrapper {
+  width: 100%;
+  min-height: 200px;
+  height: auto;
+  margin-top: 10px;
+  border-top: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+}

@@ -1,6 +1,6 @@
 import styles from "./mainHead.module.scss";
 import TitleAndCount from "../TitleAndCount/TitleAndCount";
-import Input from "../SearchTodo/Input";
+import Input from "../SearchTodo/SearchInput";
 
 const MainHead = () => {
   return (

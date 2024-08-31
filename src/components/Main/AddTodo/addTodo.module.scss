@@ -1,0 +1,14 @@
+@import "../../../styles/variables//mixins";
+
+.addInputWrapper {
+  @include inputWrapperMixin(7vh);
+  margin: 16px;
+  .addInput {
+    @include inputMixin(80%, 7vh);
+  }
+  .btnAdd {
+    @include button(20%, $all-todo-btn-color, 0, 7vh);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}

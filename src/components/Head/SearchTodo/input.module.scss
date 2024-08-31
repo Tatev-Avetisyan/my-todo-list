@@ -2,35 +2,21 @@
 @import "../../../styles/variables/mixins";
 @import "../../../styles/variables/colors";
 
-.inputWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5vh;
-  border-radius: $base-border-radius;
-  margin: 1% 10px 0 3px;
-  .input {
-    width: 58%;
-    height: 5vh;
-    border-top-left-radius: $base-border-radius;
-    border-bottom-left-radius: $base-border-radius;
-    border: 1px solid #b8b9ba;
-    padding: 5px;
-    &::placeholder {
-      color: #999;
-      font-size: 18px;
-    }
+.searchInputWrapper {
+  @include inputWrapperMixin(5vh);
+  .searchInput {
+    @include inputMixin(58%, 5vh);
   }
   div {
     width: 42%;
     .btnALL {
-      @include button(25%, $all-todo-btn-color, 0);
+      @include button(25%, $all-todo-btn-color, 0, 5vh);
     }
     .btnDone {
-      @include button(30%, $done-todo-btn-color, 0);
+      @include button(30%, $done-todo-btn-color, 0, 5vh);
     }
     .btnImportant {
-      @include button(45%, $important-todo-btn-color, 0 8px 8px 0);
+      @include button(45%, $important-todo-btn-color, 0 8px 8px 0, 5vh);
     }
   }
 }

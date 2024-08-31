@@ -1,14 +1,11 @@
 import styles from "./input.module.scss";
 import Button from "../../../shared/Button/Buttons";
+import Input from "../../../shared/Input/Input";
 
-const Input = () => {
+const SearchInput = () => {
   return (
-    <div className={styles.inputWrapper}>
-      <input
-        className={styles.input}
-        type="text"
-        placeholder="Type text for search..."
-      />
+    <div className={styles.searchInputWrapper}>
+      <Input className={styles.searchInput} placeholder="Type text for search..." />
       <div>
         <Button context="All" className={styles.btnALL} />
         <Button context="Done" className={styles.btnDone} />
@@ -18,4 +15,4 @@ const Input = () => {
   );
 };
 
-export default Input;
+export default SearchInput;
