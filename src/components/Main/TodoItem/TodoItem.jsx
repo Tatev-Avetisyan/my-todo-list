@@ -1,12 +1,9 @@
-import styles from "./todoItem.module.scss";
-import CheckIcon from "@mui/icons-material/Check";
-import CreateIcon from "@mui/icons-material/Create";
-import DeleteIcon from "@mui/icons-material/Delete";
 import DoneIcon from "@mui/icons-material/Done";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
-import InfoIcon from "@mui/icons-material/Info";
+import DeleteIcon from "@mui/icons-material/Delete";
 import EditCalendarIcon from "@mui/icons-material/EditCalendar";
 import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
+
+import styles from "./todoItem.module.scss";
 
 const TodoItem = ({ name }) => {
   return (

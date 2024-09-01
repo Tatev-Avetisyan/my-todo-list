@@ -1,4 +1,4 @@
-import TodoList from "../TodoList/TodoList";
+import TodoList from "./TodoList/TodoList";
 import MainHead from "../Head/MainHead/MainHead";
 import AddTodo from "./AddTodo/AddTodo";
 
