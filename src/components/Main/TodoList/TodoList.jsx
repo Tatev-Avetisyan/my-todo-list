@@ -10,7 +10,13 @@ const TodoList = () => {
   return (
     <section className={styles.todoListWrapper}>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} name={todo.todoTitle} />
+        <TodoItem
+          key={todo.id}
+          id={todo.id}
+          name={todo.todoTitle}
+          done={todo.done}
+          important={todo.important}
+        />
       ))}
     </section>
   );
