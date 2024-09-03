@@ -5,6 +5,7 @@ import {
   toggleTodo,
   toggleImportant,
   deleteTodo,
+  editTodo,
 } from "./ActionCreators";
 
 const initialTodoList = [
@@ -42,6 +43,10 @@ const TodoProvider = ({ children }) => {
     dispatch(deleteTodo(id));
   }, []);
 
+  const handleEdit = useCallback((id, newTitle) => {
+    dispatch(editTodo(id, newTitle));
+  }, []);
+
   return (
     <TodoContext.Provider
       value={{
@@ -50,6 +55,7 @@ const TodoProvider = ({ children }) => {
         onDelete: handleDelete,
         onToggleDone: handleToggleDone,
         onToggleImportant: handleToggleImportant,
+        onEdit: handleEdit,
       }}>
       {children}
     </TodoContext.Provider>

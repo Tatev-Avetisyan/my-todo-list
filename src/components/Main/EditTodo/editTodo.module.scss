@@ -1,0 +1,20 @@
+@import "../../../styles/variables//mixins";
+
+.editInputWrapper {
+  @include inputWrapperMixin(5vh);
+  margin: 16px;
+  .addInput {
+    @include inputMixin(60%, 5vh);
+  }
+  div {
+    width: 40%;
+    .btnEdit {
+      @include button(50%, $all-todo-btn-color, 0, 5vh);
+    }
+    .btnCancel {
+      @include button(50%, $cancel-btn-color, 0, 5vh);
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+}

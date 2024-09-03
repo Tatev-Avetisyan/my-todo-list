@@ -25,3 +25,8 @@ export const deleteTodo = (id) => ({
   type: ACTION_TYPES.DELETE_TODO,
   payload: id,
 });
+
+export const editTodo = (id, newTitle) => ({
+  type: ACTION_TYPES.EDIT_TODO,
+  payload: { id, newTitle },
+});
