@@ -27,6 +27,19 @@ const TodoItem = ({ id, name, done, important }) => {
     }
   };
 
+  const handleToggleImportant = () => {
+    if (done) {
+      alert("A done todo cannot be marked as important!");
+      return;
+    }
+    onToggleImportant(id);
+  };
+  const handleToggleDone = () => {
+    if (!done && important) {
+      onToggleImportant(id);
+    }
+    onToggleDone(id);
+  };
   return (
     <div className={styles.todoItemAndEditWrapper}>
       {isEditing ? (
@@ -50,10 +63,10 @@ const TodoItem = ({ id, name, done, important }) => {
             <button onClick={onEditClickHandler}>
               <EditCalendarIcon />
             </button>
-            <button onClick={() => onToggleDone(id)}>
+            <button onClick={handleToggleDone}>
               <DoneIcon />
             </button>
-            <button onClick={() => onToggleImportant(id)}>
+            <button onClick={handleToggleImportant}>
               <PriorityHighIcon />
             </button>
             <button onClick={() => onDelete(id)}>

@@ -5,11 +5,11 @@ import { TodoContext } from "../../../context/TodoContext";
 import styles from "./todoList.module.scss";
 
 const TodoList = () => {
-  const { todos } = useContext(TodoContext);
+  const { filteredTodos } = useContext(TodoContext);
 
   return (
     <section className={styles.todoListWrapper}>
-      {todos.map((todo) => (
+      {filteredTodos.map((todo) => (
         <TodoItem
           key={todo.id}
           id={todo.id}
@@ -21,5 +21,4 @@ const TodoList = () => {
     </section>
   );
 };
-
 export default TodoList;

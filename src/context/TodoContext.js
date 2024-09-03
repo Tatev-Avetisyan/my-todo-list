@@ -1,4 +1,4 @@
-import { createContext, useReducer, useCallback } from "react";
+import { createContext, useReducer, useState, useCallback } from "react";
 import { todoReducer } from "./TodoReducer";
 import {
   addTodo,
@@ -18,14 +18,20 @@ const initialTodoList = [
 
 const TodoContext = createContext({
   todos: [],
+  filteredTodos: [],
   onAdd: () => {},
   onDelete: () => {},
   onToggleDone: () => {},
   onToggleImportant: () => {},
+  onEdit: () => {},
+  onSearch: () => {},
+  setFilter: () => {},
 });
 
 const TodoProvider = ({ children }) => {
   const [todos, dispatch] = useReducer(todoReducer, initialTodoList);
+  const [filter, setFilter] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleAdd = useCallback((todoTitle) => {
     dispatch(addTodo(todoTitle));
@@ -47,15 +53,39 @@ const TodoProvider = ({ children }) => {
     dispatch(editTodo(id, newTitle));
   }, []);
 
+  const filteredTodos = todos.filter((todo) => {
+    let matchesFilter = true;
+    if (filter === "Done") {
+      matchesFilter = todo.done;
+    } else if (filter === "Important") {
+      matchesFilter = todo.important;
+    }
+    return (
+      matchesFilter &&
+      todo.todoTitle.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  });
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
+  const handleSetFilter = (filter) => {
+    setFilter(filter);
+  };
+
   return (
     <TodoContext.Provider
       value={{
-        todos: todos,
+        todos,
+        filteredTodos,
         onAdd: handleAdd,
         onDelete: handleDelete,
         onToggleDone: handleToggleDone,
         onToggleImportant: handleToggleImportant,
         onEdit: handleEdit,
+        onSearch: handleSearch,
+        setFilter: handleSetFilter,
       }}>
       {children}
     </TodoContext.Provider>
